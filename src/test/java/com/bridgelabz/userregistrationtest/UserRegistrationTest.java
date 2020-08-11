@@ -64,14 +64,14 @@ public class UserRegistrationTest {
     @Test
     public void givenPassword_WhenProper_ShouldReturnTrue(){
         UserRegistration register = new UserRegistration();
-        boolean result = register.validatePassword("AVCDERdgeger");
+        boolean result = register.validatePassword("AVCDER123sdf");
         Assert.assertEquals(true,result);
     }
 
     @Test
     public void givenPassword_WhenShort_ShouldReturnTrue(){
         UserRegistration register = new UserRegistration();
-        boolean result = register.validatePassword("sec52");
+        boolean result = register.validatePassword("secAs");
         Assert.assertEquals(false,result);
     }
 
