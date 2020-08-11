@@ -61,4 +61,18 @@ public class UserRegistrationTest {
         Assert.assertEquals(false,result);
     }
 
+    @Test
+    public void givenPassword_WhenProper_ShouldReturnTrue(){
+        UserRegistration register = new UserRegistration();
+        boolean result = register.validatePassword("syf46t5289bt");
+        Assert.assertEquals(true,result);
+    }
+
+    @Test
+    public void givenPassword_WhenShort_ShouldReturnTrue(){
+        UserRegistration register = new UserRegistration();
+        boolean result = register.validatePassword("sec52");
+        Assert.assertEquals(false,result);
+    }
+
 }
