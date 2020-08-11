@@ -33,4 +33,18 @@ public class UserRegistrationTest {
         Assert.assertEquals(false,result);
     }
 
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue(){
+        UserRegistration register = new UserRegistration();
+        boolean result = register.registerEmail("abc@gamil.com");
+        Assert.assertEquals(true,result);
+    }
+
+    @Test
+    public void givenEmail_WhenShort_ShouldReturnTrue(){
+        UserRegistration register = new UserRegistration();
+        boolean result = register.registerEmail("@gmail.com");
+        Assert.assertEquals(false,result);
+    }
+
 }
