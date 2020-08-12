@@ -12,35 +12,33 @@ import java.util.Collection;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class ValidEmailTest {
+public class ValidFirstNameTest {
 
-    public String email2Test;
+    public String firstName2Test;
     public boolean expectedResult;
 
-    public ValidEmailTest(String email, boolean expectedResult){
-        this.email2Test = email;
+    public ValidFirstNameTest(String firstName, boolean expectedResult){
+        this.firstName2Test = firstName;
         this.expectedResult = expectedResult;
     }
 
     @Parameterized.Parameters
     public static Collection data(){
         return Arrays.asList(new Object[][]{
-                {"abc@yahoo.com", true},
-                {"abc-100@yahoo.com", true},
-                {"abc.100@yahoo.com", false},
-                {"abc111@abc.com", true},
-                {"abc-100@abc.net", true},
-                {"abc.100@abc.com.au", false},
-                {"abc@1.com", true},
-                {"abc@gmail.com.com", false},
-                {"abc+100@gmail.com", false}
+                {"Nishit Nalin", true},
+                {"Nis", true},
+                {"nishit", false},
+                {"Nis", true},
+                {"Nishit2", false},
+                {"Nis&^%", false},
+                {"Ni", false},
         });
     }
 
     @Test
     public void givenEmail_WhenProper_ShouldReturnTrue(){
         UserRegistration register = new UserRegistration();
-        boolean result = register.validateEmail(this.email2Test);
+        boolean result = register.validateName(this.firstName2Test);
         Assert.assertEquals(this.expectedResult, result);
     }
 

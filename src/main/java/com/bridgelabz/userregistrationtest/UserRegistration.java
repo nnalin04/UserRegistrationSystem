@@ -10,17 +10,17 @@ public class UserRegistration {
     private static final String PASSWORD_PATTERN = "^(?=.*[A-Z].*)(?=.*[0-9].*)(?=.*[!@#$%^&*+].*)[0-9a-zA-Z!@#$%^&*+]{8,}$";
 
 
-    public boolean registerName(String fname) {
+    public boolean validateName(String fname) {
         Pattern pattern = Pattern.compile(NAME_PATTERN);
         return pattern.matcher(fname).matches();
     }
 
-    public boolean registerEmail(String email){
+    public boolean validateEmail(String email){
         Pattern pattern = Pattern.compile(EMAIL_PATTERN);
         return pattern.matcher(email).matches();
     }
 
-    public boolean registerMobileNumber(String number){
+    public boolean validateMobileNumber(String number){
         Pattern pattern = Pattern.compile(MOBILE_NUMBER_PATTERN);
         return pattern.matcher(number).matches();
     }
