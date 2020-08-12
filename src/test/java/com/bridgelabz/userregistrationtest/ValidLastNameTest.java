@@ -12,12 +12,12 @@ import java.util.Collection;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class ValidEmailTest {
+public class ValidLastNameTest {
 
     public String email2Test;
     public boolean expectedResult;
 
-    public ValidEmailTest(String email, boolean expectedResult){
+    public ValidLastNameTest(String email, boolean expectedResult){
         this.email2Test = email;
         this.expectedResult = expectedResult;
     }
@@ -25,15 +25,13 @@ public class ValidEmailTest {
     @Parameterized.Parameters
     public static Collection data(){
         return Arrays.asList(new Object[][]{
-                {"abc@yahoo.com", true},
-                {"abc-100@yahoo.com", true},
-                {"abc.100@yahoo.com", false},
-                {"abc111@abc.com", true},
-                {"abc-100@abc.net", true},
-                {"abc.100@abc.com.au", false},
-                {"abc@1.com", true},
-                {"abc@gmail.com.com", false},
-                {"abc+100@gmail.com", false}
+                {"Nishit Nalin", true},
+                {"Nis", true},
+                {"nishit", false},
+                {"Nis", true},
+                {"Nishit2", false},
+                {"Nis&^%", false},
+                {"Ni", false},
         });
     }
 
